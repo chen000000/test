@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ApplicationFacade.h"
+#import "VCAdmin.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    VCAdmin * vcAdmin = [[VCAdmin alloc] init];
+    [[ApplicationFacade getInstance] startup:vcAdmin];
+    self.window.rootViewController = vcAdmin;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
