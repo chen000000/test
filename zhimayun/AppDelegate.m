@@ -25,6 +25,8 @@
     self.window.rootViewController = vcAdmin;
     [self.window makeKeyAndVisible];
     
+    
+    
     return YES;
 }
 
